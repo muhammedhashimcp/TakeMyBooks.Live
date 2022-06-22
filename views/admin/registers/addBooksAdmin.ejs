@@ -1,0 +1,286 @@
+<form class="card card-block bg-faded">
+    <legend class="m-b-1 text-xs-center">Sign up</legend>
+
+    <div class="form-group input-group">
+        <span class="has-float-label">
+            <input class="form-control" id="first" type="text" placeholder="Name" />
+            <label for="first">First</label>
+        </span>
+        <label class="has-float-label">
+            <input class="form-control" type="text" placeholder="Surname" />
+            <span>Last</span>
+        </label>
+    </div>
+
+    <div class="form-group input-group">
+        <span class="input-group-addon">@</span>
+        <label class="has-float-label">
+            <input class="form-control" type="email" placeholder="email@example.com" value="email@example.com" />
+            <span>Email</span>
+        </label>
+    </div>
+
+    <div class="form-group has-float-label">
+        <input class="form-control" id="password" type="password" placeholder="••••••••" />
+        <label for="password">Password</label>
+    </div>
+
+    <label class="form-group has-float-label">
+        <select class="form-control custom-select">
+            <option selected>United States</option>
+            <option>Canada</option>
+            <option>...</option>
+        </select>
+        <span>Country</span>
+    </label>
+
+    <div class="form-group">
+        <label class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" />
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Subscribe to newsletter</span>
+        </label>
+    </div>
+
+    <button class="btn btn-block btn-primary" type="submit">Sign up</button>
+</form>
+
+<!---->
+
+<a href="https://github.com/tonystar/bootstrap-float-label" target="_blank">
+    <img src="https://img.shields.io/github/stars/tonystar/bootstrap-float-label.svg?style=social&label=Star" />
+</a>
+<form id="user-address">
+    <div class="row">
+        <div class="col-md-8 mb-4 mt-5 ">
+            <div class="card mb-4">
+                <div class="card-header py-3">
+                    <h5 class="mb-0">Biling details</h5>
+                </div>
+                <div class="card-body ">
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="name" id="form7Example4" class="form-control" required />
+                        <label class="form-label" for="form7Example4">Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="address" id="form7Example4" class="form-control" required />
+                        <label class="form-label" for="form7Example4">Address</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="city" id="form7Example4" class="form-control" required />
+                        <label class="form-label" for="form7Example4">City</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="state" id="form7Example4" class="form-control" required />
+                        <label class="form-label" for="form7Example4">State</label>
+                    </div>
+
+
+
+
+                    <div class="form-outline mb-4">
+                        <input type="text" name="pincode" id="form7Example4" class="form-control" required />
+                        <label class="form-label" for="form7Example4">Pincode</label>
+                    </div>
+
+
+
+                    <!-- Number input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" name="mobile" id="form7Example6" class="form-control" required />
+                        <label class="form-label" for="form7Example6">Mobile</label>
+                        <input type="text" name="userid" value="{{user._id}}" hidden>
+                    </div>
+
+
+                    <button style="float:right ;" type="submit" class="btn btn-dark btn-lg btn-block">
+                        Add Address
+                    </button>
+
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+</form>
+</div>
+</div>
+</div>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth px-0">
+            <div class="row w-100 mx-0">
+                <div class="col-lg-5 mx-auto">
+                    <div class="auth-form-light text-center py-5 px-4 px-sm-5">
+                        <div class="brand-logo text-center">
+                            <img class src="/images/logoMini.svg" alt="TakeMyBooks.Org">
+                        </div>
+                        <div>
+                            <h4>
+                                <%- message %>
+                            </h4>
+                            <div>
+                                <%- include('../../error/flash-message.ejs') %>
+                            </div>
+                        </div>
+                        <form class="pt-3" action="/admin/addBooks" method="post" enctype="multipart/form-data">
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend bg-transparent">
+                                    <span class="input-group-text bg-transparent border-right-0">
+                                        <i class="mdi mdi-account text-primary"></i>
+                                    </span>
+                                </div>
+                                <input type="text" name="bookTitle" class="form-control form-control-lg border-left-0"
+                                    placeholder="Book title">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent border-right-0">
+                                            <i class="mdi mdi-email text-primary"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="BookAuthor"
+                                        class="form-control form-control-lg border-left-0" placeholder="Book author">
+                                </div>
+                            </div>
+
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend bg-transparent">
+                                    <span class="input-group-text bg-transparent border-right-0">
+                                        <i class="mdi mdi-alarm text-primary"></i>
+                                    </span>
+                                </div>
+                                <input type="number" name="ISBN" class="form-control form-control-lg border-left-0"
+                                    placeholder="ISBN ">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent border-right-0">
+                                            <i class="mdi mdi-email text-primary"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="bookDescription"
+                                        class="form-control form-control-lg border-left-0"
+                                        placeholder="Book Description">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent border-right-0">
+                                            <i class="mdi mdi-email text-primary"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="keywords"
+                                        class="form-control form-control-lg border-left-0"
+                                        placeholder="Keywords or Tags">
+                                </div>
+                            </div>
+                            <div class="form-group input-group  ">
+                                <div class="input-group-prepend bg-transparent ">
+                                    <div class="dropdown form-control form-control-lg ">
+                                        <button class="btn  dropdown-toggle " type="button" data-toggle="dropdown">
+                                            <span class="caret"> </span>Sub
+                                            Category</button>
+                                        <ul class="dropdown-menu form-control-lg">
+                                            <li><input name="category" type="checkbox" />Apple </li>
+                                            <li><input type="checkbox" />Orange</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown form-control form-control-lg ">
+                                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <span class="caret">Sub
+                                                Category</span></button>
+                                        <ul class="dropdown-menu form-control-lg">
+                                            <li><input name="subCategory" type="checkbox" />Apple </li>
+                                            <li><input name="subCategory" type="checkbox" />Orange</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group input-group  ">
+                                <div class="input-group-prepend bg-transparent ">
+                                </div>
+                                <select name="pricingType" class="form-control form-control-lg "
+                                    id="exampleFormControlSelect2 ">
+                                    <option>Free</option>
+                                    <option>Donation</option>
+                                    <option>Delivery Charge</option>
+                                    <option>processing charge only</option>
+                                </select>
+                            </div>
+                            <div class="form-group input-group  ">
+                                <div class="input-group-prepend bg-transparent ">
+                                    <span class="input-group-text bg-transparent border-right-0 ">
+                                        <i class="mdi mdi-account-location text-primary "></i>
+                                    </span>
+                                </div>
+                                <input type="Number" name="price"
+                                    class="text-input form-control form-control-lg border-left-0" placeholder="Price">
+                                <select name="processingCharge" class="form-control form-control-lg "
+                                    id="exampleFormControlSelect2 ">
+                                    <option>Processing Charge</option>
+                                    <% for(let count=0; count <=500; count=count+50 ){ %>
+                                        <option>
+                                            <%= count %>
+                                        </option>
+                                        <% } %>
+                                </select>
+                                <select name="stock" class="form-control form-control-lg "
+                                    id="exampleFormControlSelect2 ">
+                                    <option>Stock</option>
+                                    <% for(let count=1; count <=255; count++ ){ %>
+                                        <option>
+                                            <%= count %>
+                                        </option>
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="file" name="mainImage"
+                                        class="form-control form-control-lg border-left-0"
+                                        placeholder="Front Cover of book This will be the main Image">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="file" name="subImage1"
+                                        class="form-control form-control-lg border-left-0"
+                                        placeholder="Book's sub Image 1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="file" name="subImage2"
+                                        class="form-control form-control-lg border-left-0"
+                                        placeholder="Book's sub Image 2">
+                                </div>
+                            </div>
+                            <div class="mt-3 ">
+                                <button id="submit" type="submit" value=""
+                                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn ">
+                                    Add Book</button>
+                            </div>
+                        </form>
+                        <div class="mt-3 ">
+                            <a href="/admin/addBooks"><button
+                                    class="btn btn-block text-danger  btn-outline-warning btn-md font-weight-bold  auth-form-btn ">
+                                    Add Another Book</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

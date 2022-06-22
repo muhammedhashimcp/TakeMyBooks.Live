@@ -1,0 +1,26 @@
+.book-title{
+    color: #4a4a4a;
+margin-bottom: 5.5rem;
+text-transform: uppercase;
+font-size: .875rem;
+font-weight: bold;
+
+}
+
+label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 2px;
+    transition: 1.2s ease all;
+    font-size: 15px;
+  }
+  input:focus ~ label{
+    top:-10px;
+    font-size:12px;
+    opacity: 1; 
+      margin-left: 45px;  
+      transition: all 1.5s ease-out; 
+      -webkit-transform: rotate(720deg);   
+      zoom: 1;
+  }

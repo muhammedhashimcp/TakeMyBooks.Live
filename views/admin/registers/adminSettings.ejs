@@ -1,0 +1,284 @@
+<div class="col-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-center">Settings</h1>
+            <p class="card-description">
+                Add Or Delete Books Category
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Book Category</label>
+                        <div class="col-sm-9 d-flex flex-row">
+                            <input type="text" id="addCategory" class="form-control form-control-lg border-left-0"
+                                placeholder="Add Book Category">
+                            <button class="btn block-icon col-sm-3 btn-outline-primary my-auto"
+                                id="addCategoryButton">Add
+                                Category</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Book Category</label>
+                        <div class=" d-flex flex-row col-sm-9">
+
+                            <select id="categorySelect" class="form-control ">
+                                <option value="">select category</option>
+                                <% category.forEach(element=>{%>
+                                    <option id="categoryOption" value="<%= element._id%>">
+                                        <%= element.category %>
+                                    </option>
+                                    <% })%>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger " id="deleteCategoryButton"
+                                type=" submit">Delete
+                                Category </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class=" card-description">
+                Add Books sub Category
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Choose Category</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select id="selectCategory4Sub" class="form-control ">
+                                <option value="">select category</option>
+                                <% category.forEach(element=>{%>
+                                    <option id="categoryOption" value="<%= element._id%>">
+                                        <%= element.category %>
+                                    </option>
+                                    <% })%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Add Sub Category</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input id="addSubCategory" type="text" class="form-control  form-control-lg border-left-0"
+                                placeholder="Add Book's Sub Category">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary m-auto"
+                                id="addSubCategoryButton">Add
+                                Sub Category</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-description">
+                Delete Books sub Category
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- <form action="/admin/deleteSubCategory"> -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Choose Category</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select id="selectCategory4Sub2" onchange="displaySubCategory()" class="form-control ">
+                                <option value="">select category</option>
+                                <% category.forEach(element=>{%>
+                                    <option id="categoryOption" value="<%= element._id%>">
+                                        <%= element.category %>
+                                    </option>
+                                    <% })%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Sub Category</label>
+                        <div class="insert d-flex flex-row col-sm-9">
+                            <select onchange="checkCategorySelect()" id="subCategorySelect4Delete"
+                                class="form-control ">
+                                <option value="">select Sub Category</option>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger "
+                                id="deleteSubCategoryButton">Delete
+                                sub Category </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="card-description">
+                Add Language
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Add Language</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input type="text" id="addLanguage" class="form-control  form-control-lg border-left-0"
+                                placeholder="Add Book Language">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary m-auto"
+                                id="addLanguageButton">Add
+                                language</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Language</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select id="category" class=" form-control ">
+                                <option> Category1</option>
+                                <option> Category1</option>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger" id="deleteCategoryButton"
+                                type="submit">Delete
+                                Language </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="card-description">
+                Add or Delete Pricing Type
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row ">
+                        <label class="col-sm-3 col-form-label">Add Pricing Type</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input id="addPricingType" type="text" class="form-control   form-control-lg border-left-0"
+                                placeholder="Add Pricing Type">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary m-auto "
+                                id="addPricingTypeButton">Add
+                                Pricing</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Pricing Type</label>
+                        <div class=" d-flex flex-row col-sm-9 ">
+                            <select class="form-control ">
+                                <option>Free</option>
+                                <option>Donation</option>
+                                <option>Delivery Charge</option>
+                                <option>processing charge only</option>
+                            </select>
+                            <button class="btn col-sm-3  block-icon btn-outline-danger">Delete
+                                Pricing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="card-description">
+                Add or Delete Vendor Type
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Add Vendor Type</label>
+                        <div class=" d-flex flex-row col-sm-9 ">
+                            <input type="text" id="addVendorType" class="form-control form-control-lg border-left-0"
+                                placeholder="Add Vendor Type">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary " id="addVendorTypeButton">
+                                Add Vendor</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Vendor</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select class="form-control ">
+                                <option>Free</option>
+                                <option>Donation</option>
+                                <option>Delivery Charge</option>
+                                <option>processing charge only</option>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger" type="submit">Delete
+                                Vendor </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-description">
+                Add or Delete Payment method
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Add Payment Type</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input type="text" name="bookTitle" class="form-control form-control-lg border-left-0"
+                                placeholder="Add Payment Type">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary " type="submit">Add
+                                Payment </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Vendor Type</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select class="form-control ">
+                                <option>Free</option>
+                                <option>Donation</option>
+                                <option>Delivery Charge</option>
+                                <option>processing charge only</option>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger" type="submit">Delete
+                                Payment </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-description">
+                Add or Delete Delivery method
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row ">
+                        <label class="col-sm-3 col-form-label">Add Delivery Method</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input type="text" name="bookTitle" class="form-control  form-control-lg border-left-0"
+                                placeholder="Add Delivery Method">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary " type="submit">Add
+                                banner Image</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Delete Delivery Method</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <select class="form-control ">
+                                <option>Free</option>
+                                <option>Donation</option>
+                                <option>Delivery Charge</option>
+                                <option>processing charge only</option>
+                            </select>
+                            <button class="btn col-sm-3 block-icon btn-outline-danger" type="submit">Delete
+                                Delivery</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row ">
+                        <label class="col-sm-3 col-form-label">Add Corousel Image</label>
+                        <div class=" d-flex flex-row col-sm-9">
+                            <input type="file" name="subImage1" class="form-control form-control-lg border-left-0"
+                                placeholder="Book's sub Image 1">
+                            <button class="btn col-sm-3 block-icon btn-outline-primary " type="submit">Add
+                                Delivery Method</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

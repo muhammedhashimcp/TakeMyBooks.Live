@@ -1,0 +1,96 @@
+<!-- //toggle button js to -->
+<div class="row">
+    <div class="col stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Users Details</p>
+                <div class="table-responsive">
+                    <table id="recent-purchases-listing" class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Age</th>
+                                <th>Role</th>
+                                <th>Recent Activities</th>
+                                <th>
+                                    <button class="btn-secondary mt-2 mt-xl-0 block-icon">Status</button>
+                                </th>
+                                <th>
+                                    <button class="btn-primary mt-2 mt-xl-0 block-icon">Edit</button>
+                                </th>
+                                <th><button class="btn-danger mt-2 mt-xl-0 block-icon">Delete</button></th>
+                                <th>
+                                    <button class="btn-warning mt-2 mt-xl-0 block-icon">Block/<br>Unblock </button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% let count=0; %>
+                                <% data.forEach(element=> { %>
+                                    <% count++ %>
+                                        <tr>
+                                            <td>
+                                                <%= count %>
+                                            </td>
+                                            <td>
+                                                <%= element.fullName %>
+                                            </td>
+                                            <td>
+                                                <%= element.email %>
+                                            </td>
+                                            <td>
+                                                <%= element.phoneNumber %>
+                                            </td>
+                                            <td>
+                                                <%= element.age %>
+                                            </td>
+                                            <td>
+                                                <%= element.role %>
+                                            </td>
+                                            <td>
+                                                <%= element.recent %>
+                                            </td>
+                                            <td class="text-center "><button class="btn btn-secondary mt-2 mt-xl-0 ">
+                                                    <%= element.status %>
+                                                </button></td>
+                                            <td class="text-center "><a
+                                                    href="/admin/editUser/<%= element._id %> "><button
+                                                        class="btn btn-primary mt-2 mt-xl-0 "><i
+                                                            class="mdi mdi-grease-pencil "> </i></button></a></td>
+                                            <td class="text-center "><a
+                                                    href="/admin/deleteUser/<%= element._id %> "><button
+                                                        class="btn btn-danger mt-2 mt-xl-0 "><i
+                                                            class="mdi mdi-delete-forever "> </i></button></a></td>
+                                            <td class="text-center ">
+                                                <!-- <div class="button r m-auto" id="button-1" value=" ">
+                                                    <input onclick="blockUser(element._id)" id="blockStatus"
+                                                        type="checkbox" class="checkbox" />
+                                                    <div class="knobs"></div>
+                                                    <div class="layer"></div>
+                                                </div> -->
+                                                <% if(element.blockStatus) {%>
+                                                    <a class="text-danger " href="/admin/blockUser/<%= element._id %>">
+                                                        <button class="btn btn-outline-danger">
+                                                            <i class="mdi mdi-block-helper"></i>
+                                                            unblock
+                                                        </button>
+                                                    </a>
+                                                    <% } else{%>
+                                                        <a class="text-success "
+                                                            href="/admin/blockUser/<%= element._id %>"> <button
+                                                                class=" btn btn-outline-success">
+                                                                <i class="mdi mdi-account-plus"></i>block
+                                                            </button></a>
+                                                        <% }%>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        <%- title %>
+    </title>
+    <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendors/base/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/css/common.css">
+
+</head>
+
+<body>
+    <% if(route==="admin" ) {%>
+        <div class=" container-scroller">
+            <%- include('../partials/adminPartials/adminNavbar.ejs') %>
+                <div class="container-fluid page-body-wrapper">
+                    <%- include('../partials/adminPartials/adminSidebar.ejs') %>
+                        <%- body %>
+                </div>
+        </div>
+        <%- include('../partials/adminPartials/adminFooter.ejs') %>
+            <%} else{ %>
+                <div class=" container-scroller">
+                    <%- include('../partials/userPartials/userNavbar.ejs') %>
+                        <div class="container-fluid page-body-wrapper">
+                            <%- include('../partials/userPartials/userSidebar.ejs') %>
+                                <%- body %>
+                        </div>
+                        <%- include('../partials/userPartials/userFooter.ejs') %>
+                </div>
+                <% } %>
+</body>
+
+<script src="/vendors/base/vendor.bundle.base.js"></script>
+<script src="/vendors/chart.js/Chart.min.js"></script>
+<script src="/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/template.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/data-table.js"></script>
+<script src="/js/jquery.dataTables.js"></script>
+<script src="/js/dataTables.bootstrap4.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<script src="/js/AJAX/booksAJAXhelpers.js"></script>
+<script src="/js/AJAX/userAJAXhelpers.js"></script>
+
+</html>

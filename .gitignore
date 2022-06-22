@@ -1,0 +1,13 @@
+refer.doc
+.vscode
+node_modules
+.eslintrc
+.sync.ffs_db
+.prettierrc
+access.log
+demo.html
+file_example_XLS_10.xls
+views/pages/billing.html
+demo.html
+views/pages/virtual-reality.html
+.env
