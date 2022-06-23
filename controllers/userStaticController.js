@@ -2,7 +2,7 @@ const booksController = require("../controllers/booksController")
 const userController = require("../controllers/userController")
 const cartSchema = require("../models/cartSchema")
 const wishListSchema = require("../models/wishListSchema")
-
+const userSchema = require("../models/userSchema")
 
 const mongoose = require("mongoose")
 
@@ -98,7 +98,6 @@ const loadUserHomePage = async (req, res, next) => {
 		console.log(req.session.userId);
 		const user = req.session.user
 		if (req.session.userId) {
-			console.log("..........home page");
 			const books = await booksController.getAllBooksDetails()
 			const userListCount = []
 			el = req.session.userId
@@ -109,7 +108,6 @@ const loadUserHomePage = async (req, res, next) => {
 					$project: { count: { $size: "$cartItems" }, _id: 0 }
 				}])
 			userListCount.push(cartCount[0])
-			console.log(userListCount, "here called");
 			res.status(200).render("user/userHomePage", {
 				route: "user",
 				title: "TakeMyBooks",
@@ -159,6 +157,62 @@ const loadResetPassword = (req, res, next) => {
 		next(error);
 	}
 };
+
+const loadShowCart = async (req, res, next) => {
+	try {
+		id = req.session.userId
+		const user = await userSchema.findOne({ _id: req.session.userId })
+		if (req.session.userId) {
+			const cart = await cartSchema.findOne(
+				{ userId: id }
+			)
+			console.log(cart);
+			res.status(200).render("tables/userCart", {
+				layout: "./layouts/registerLayout.ejs",
+				route: "user",
+				title: "cart",
+				user: user,
+				data: cart,
+				route: "list"
+
+			});
+		} else {
+			res.redirect("/user/userHomepage");
+		}
+	} catch (error) {
+		console.log(error);
+		next(error);
+	}
+};
+
+const loadCheckout = async (req, res, next) => {
+	try {
+		id = req.session.userId
+		const user = await userSchema.findOne({ _id: req.session.userId })
+		if (req.session.userId) {
+			const cart = await cartSchema.findOne(
+				{ userId: id }
+			)
+			console.log(cart);
+			res.status(200).render("tables/checkOut", {
+				layout: "./layouts/registerLayout.ejs",
+				route: "user",
+				title: "cart",
+				user: user,
+				data: cart,
+				route: "list"
+
+			});
+		} else {
+			res.redirect("/user/userHomepage");
+		}
+	} catch (error) {
+		console.log(error);
+		next(error);
+	}
+};
+
+
 module.exports = {
 	loadUserSignUp,
 	loadVerifyOtp,
@@ -166,5 +220,7 @@ module.exports = {
 	loadUserHomePage,
 	loadForgotPassword,
 	loadResetPassword,
+	loadShowCart,
+	loadCheckout
 };
 

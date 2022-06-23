@@ -85,24 +85,32 @@
             <li class="nav-item dropdown mr-1">
                 <div class="show-item"> <a
                         class="nav-link  count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
-                        href="/wishlist">
-                        <i class="mdi mdi-heart mx-0"></i>
-                        <span class="count">5</span>
-                    </a></div>
-            </li>
-            <li class="nav-item dropdown mr-1">
-                <div class="show-item"> <a
-                        class="nav-link  count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
-                        href="/Gift">
-                        <i class="mdi mdi-gift mx-0"></i>
-                        <span class="count">5</span>
-                    </a></div>
-            </li>
-            <li class="nav-item dropdown mr-1">
-                <div class="show-item"> <a
-                        class="nav-link  count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
                         href="/user/cart">
                         <i class="mdi mdi-cart mx-0"></i>
+                        <span class='badge badge-warning' id='lblCartCount'>
+                            <span id="cartCount">
+                                <%- listCount[0].count %>
+                            </span>
+                        </span>
+                    </a></div>
+            </li>
+            <li class="nav-item dropdown mr-1">
+                <div class="show-item"> <a
+                        class="nav-link  count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
+                        href="/user/wishlist">
+                        <i class="mdi mdi-heart mx-0"></i>
+                        <span class='badge badge-warning' id='lblCartCount'>
+                            <span id="cartCount">
+                                <%- listCount[0].count %>
+                            </span>
+                        </span>
+                    </a></div>
+            </li>
+            <li class="nav-item dropdown mr-1">
+                <div class="show-item"> <a
+                        class="nav-link  count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
+                        href="/user/Gift">
+                        <i class="mdi mdi-gift mx-0"></i>
                         <span class='badge badge-warning' id='lblCartCount'>
                             <span id="cartCount">
                                 <%- listCount[0].count %>
@@ -217,16 +225,36 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <div class="hide-item"> <a class="dropdown-item " href="/cart">
                             <i class="mdi mdi-cart text-primary"></i> Cart
+                            <span class='badge badge-warning ml-5' id='lblCartCount'>
+                                <span id="cartCount">
+                                    <%- listCount[0].count %>
+                                </span>
+                            </span>
                         </a>
                     </div>
                     <div class="hide-item"><a class=" dropdown-item " href="/wishlist">
                             <i class="mdi mdi-heart text-primary"></i> Wishlist
+                            <span class='badge badge-warning ml-5' id='lblCartCount'>
+                                <span id="cartCount">
+                                    <%- listCount[0].count %>
+                                </span>
+                            </span>
                         </a> </div>
                     <div class="hide-item"> <a class="dropdown-item " href="/Gift">
                             <i class="mdi mdi-gift text-primary"></i>Gift
+                            <span class='badge badge-warning ml-5' id='lblCartCount'>
+                                <span id="cartCount">
+                                    <%- listCount[0].count %>
+                                </span>
+                            </span>
                         </a> </div>
                     <div class="show-item"> <a class="dropdown-item " href="/Gift">
                             <i class="mdi mdi-truck-delivery text-primary"></i>order
+                            <span class='badge badge-warning ml-5' id='lblCartCount'>
+                                <span id="cartCount">
+                                    <%- listCount[0].count %>
+                                </span>
+                            </span>
                         </a> </div>
                     <a class="dropdown-item" href="/user/userLogin">
                         <i class="mdi mdi-login text-primary"></i>Account

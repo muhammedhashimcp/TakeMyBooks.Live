@@ -13,8 +13,8 @@ const addToCart = async (req, res, next) => {
     try {
         if (req.session.userId) {
             const bookId = req.params.id
-            const bookPrice = await booksSchema.findOne({ _id: bookId }, { price: 1, _id: 0 })
-            const price = parseInt(bookPrice.price);
+            const book = await booksSchema.findOne({ _id: bookId }, { price: 1, stock: 1 })
+            const price = parseInt(book.price);
             const userCart = await cartSchema.findOne({ userId: req.session.userId })
             if (userCart) {
                 const booksInCart = await cartSchema.findOne({ userId: req.session.userId }, {
@@ -22,7 +22,7 @@ const addToCart = async (req, res, next) => {
                         $elemMatch: { books: bookId }
                     }
                 })
-                if (booksInCart.cartItems.length !== 0) {
+                if (booksInCart.cartItems.length !== 0 && book.stock > 0) {
                     const bookUpdated = await cartSchema.updateOne({
                         userId: req.session.userId, 'cartItems.books': bookId
                     }, {
@@ -33,6 +33,13 @@ const addToCart = async (req, res, next) => {
                             'total': price,
                         },
                     })
+                    // const bookStockUpdated = await bookSchema.updateOne({
+                    //     _id: bookId, 'cartItems.books': bookId
+                    // }, {
+                    //     $dec: {
+                    //         'stock': 1,
+                    //     },
+                    // })
                 } else {
                     const cartItemUpdated = await cartSchema.updateOne(
                         { userId: req.session.userId },

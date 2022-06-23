@@ -214,15 +214,23 @@
                         <ul class="nav nav-tabs px-4" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview"
-                                    role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                                    role="tab" aria-controls="overview" aria-selected="true">Best Sellers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="sales-tab" data-toggle="tab" href="#sales" role="tab"
-                                    aria-controls="sales" aria-selected="false">Sales</a>
+                                    aria-controls="sales" aria-selected="false">Best Authors</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#purchases" role="tab"
-                                    aria-controls="purchases" aria-selected="false">Purchases</a>
+                                    aria-controls="purchases" aria-selected="false">Trendings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#purchases" role="tab"
+                                    aria-controls="purchases" aria-selected="false">Top 5</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#purchases" role="tab"
+                                    aria-controls="purchases" aria-selected="false">Must Read Books</a>
                             </li>
                         </ul>
                         <div class="tab-content py-0 px-0">
@@ -298,8 +306,7 @@
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkA">
                                                     <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                                    <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                                    <a class="dropdown-item" href="#">21 Oct 2018</a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -384,38 +391,13 @@
                                                     </ul>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                        Maxime
-                                                        mollitia,
-                                                        molestiae quas vel sint commodi repudiandae consequuntur
-                                                        voluptatum
-                                                        laborum
-                                                        numquam blanditiis harum quisquam eius sed odit fugiat iusto
-                                                        fuga
-                                                        praesentium
-                                                        optio, eaque rerum! Provident similique accusantium nemo
-                                                        autem.
-                                                        Veritatis
-                                                        obcaecati tenetur iure eius earum ut molestias architecto
-                                                        voluptate
-                                                        aliquam
-                                                        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt
-                                                        quaerat,
-                                                        odit,
-                                                        tenetur error, harum nesciunt ipsum debitis quas aliquid.
-                                                        Reprehenderit,
-                                                        quia. Quo neque error repudiandae fuga? Ipsa laudantium
-                                                        molestias
-                                                        eos
-                                                        sapiente officiis modi at sunt excepturi expe</p> -->
-                                                    <ul>
-                                                        <li>
+                                                    <ul class="text text-center">
+                                                        <li class="list-unstyled">
                                                             <h4>
                                                                 <%= books.bookTitle%>
                                                             </h4>
                                                         </li>
-
-                                                        <li>
+                                                        <li class="list-unstyled">
                                                             <h4>
                                                                 <%= books.bookTitle%>
                                                             </h4>
@@ -423,6 +405,58 @@
 
 
                                                     </ul>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Details</th>
+                                                                <th>specification</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>John</td>
+                                                                <td>Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mary</td>
+                                                                <td>Moe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>July</td>
+                                                                <td>Dooley</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>John</td>
+                                                                <td>Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mary</td>
+                                                                <td>Moe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mary</td>
+                                                                <td>Moe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mary</td>
+                                                                <td>Moe</td>
+                                                            </tr>
+                                                            <hr class="mt-2 mb-3" />
+                                                        </tbody>
+                                                    </table>
+                                                    <div class=" ">
+                                                        <li class="list-unstyled text-center">
+                                                            <div class="btn btn-outline-success col-md-9">
+                                                                pri
+                                                                ce</div>
+                                                        </li>
+                                                        <li class="list-unstyled text text-center">
+                                                            <div class="btn btn-outline-success col-md-9 mt-1">
+                                                                pri
+                                                                ce</div>
+                                                        </li>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -560,7 +594,7 @@
                             </button>
                             <button class=" btn btn-outline-danger col-4 text-center">
                                 <i class="mdi mdi-heart-outline"></i>
-                                <!-- <span>wish</span> -->
+
                             </button>
                             <button class=" btn btn-outline-warning col-4 text-center">
                                 <i class="mdi mdi-gift"></i>
@@ -738,3 +772,221 @@
         </div>
     </div>
 </div>
+
+<!-- 
+<section id="services" class="services section-bg">
+    <div class="container mt-5">
+    
+            <div class="row row-sm">
+                <h4><strong>{{productDetails.brandnames.brand}}</strong></h4>
+                <hr>
+                <div class="col-md-6 _boxzoom">
+
+                    <div class="zoom-thumb">
+                        <ul class="piclist">
+                            <li><img src="/images/{{productDetails.allImages.[0]}}" alt=""></li>
+                            <li><img src="/images/{{productDetails.allImages.[1]}}" alt=""></li>
+                            <li><img src="/images/{{productDetails.allImages.[0]}}" alt=""></li>
+                            <li><img src="/images/{{productDetails.allImages.[1]}}" alt=""></li>
+                        </ul>
+                    </div>
+
+                    <div class="_product-images">
+                        <div class="picZoomer">
+                            <img class="my_img" src="/images/{{productDetails.allImages.[1]}}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="_product-detail-content">
+
+                        <h2 class="_p-name"><strong> {{productDetails.brandnames.brand}} </strong></h2>
+                        <hr>
+                        <div class="_p-price-box">
+                            <div class="p-list">
+                                <span> M.R.P. : <i class="fa fa-inr"></i> <del> </del> </span>
+                                <span class="price">{{productDetails.price}}</span>
+                            </div>
+                            <div class="_p-add-cart">
+
+                            </div>
+                            <div class="_p-features">
+                                <h2><strong>{{productDetails.subcategory.subcategoryName}} </strong></h2>
+                                <h4><strong>{{productDetails.catagory.category}}</strong></h4>
+                                <span> Description About this product:- </span>
+                                Solid color polyester/linen full blackout thick sunscreen floor curtain
+                                Type: General Pleat
+                                Applicable Window Type: Flat Window
+                                Format: Rope
+                                Opening and Closing Method: Left and Right Biparting Open
+                                Processing Accessories Cost: Included
+                                Installation Type: Built-in
+                                Function: High Shading(70%-90%)
+                                Material: Polyester / Cotton
+                                Style: Classic
+                                Pattern: Embroidered
+                                Location: Window
+                                Technics: Woven
+                                Use: Home, Hotel, Hospital, Cafe, Office
+                                Feature: Blackout, Insulated, Flame Retardant
+                                Place of Origin: India
+                                Name: Curtain
+                                Usage: Window Decoration
+                                Keywords: Ready Made Blackout Curtain
+                            </div>
+
+                            <ul class="spe_ul"></ul>
+                            <div class="_p-qty-and-cart">
+                                <div class="_p-add-cart">
+
+                                    <button class="btn-theme btn btn-success" tabindex="0">
+                                        <i class="fa fa-shopping-cart"></i> Add to Cart
+
+                                        <button onclick="addToCart('{{this._id}}')" class="btn btn-warning">Add to
+                                            Cart</button>
+                                        <button onclick="addToWishlist('{{this._id}}')"
+                                            class="btn btn-warning">Whishlist <i class="fa-solid fa-heart"></i></button>
+
+                                    </button>
+                                    <input type="hidden" name="pid" value="18" />
+                                    <input type="hidden" name="price" value="850" />
+                                    <input type="hidden" name="url" value="" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<script>
+
+    /*!     
+        jquery.picZoomer.js
+        v 1.0
+        David
+        http://www.CodingSerf.com
+*/
+
+    //放大镜控件
+    ; (function ($) {
+        $.fn.picZoomer = function (options) {
+            var opts = $.extend({}, $.fn.picZoomer.defaults, options),
+                $this = this,
+                $picBD = $('<div class="picZoomer-pic-wp"></div>').css({ 'width': opts.picWidth + 'px', 'height': opts.picHeight + 'px' }).appendTo($this),
+                $pic = $this.children('img').addClass('picZoomer-pic').appendTo($picBD),
+                $cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>').appendTo($picBD),
+                cursorSizeHalf = { w: $cursor.width() / 2, h: $cursor.height() / 2 },
+                $zoomWP = $('<div class="picZoomer-zoom-wp"><img src="" alt="" class="picZoomer-zoom-pic"></div>').appendTo($this),
+                $zoomPic = $zoomWP.find('.picZoomer-zoom-pic'),
+                picBDOffset = { x: $picBD.offset().left, y: $picBD.offset().top };
+
+
+            opts.zoomWidth = opts.zoomWidth || opts.picWidth;
+            opts.zoomHeight = opts.zoomHeight || opts.picHeight;
+            var zoomWPSizeHalf = { w: opts.zoomWidth / 2, h: opts.zoomHeight / 2 };
+
+            //初始化zoom容器大小
+            $zoomWP.css({ 'width': opts.zoomWidth + 'px', 'height': opts.zoomHeight + 'px' });
+            $zoomWP.css(opts.zoomerPosition || { top: 0, left: opts.picWidth + 30 + 'px' });
+            //初始化zoom图片大小
+            $zoomPic.css({ 'width': opts.picWidth * opts.scale + 'px', 'height': opts.picHeight * opts.scale + 'px' });
+
+            //初始化事件
+            $picBD.on('mouseenter', function (event) {
+                $cursor.show();
+                $zoomWP.show();
+                $zoomPic.attr('src', $pic.attr('src'))
+            }).on('mouseleave', function (event) {
+                $cursor.hide();
+                $zoomWP.hide();
+            }).on('mousemove', function (event) {
+                var x = event.pageX - picBDOffset.x,
+                    y = event.pageY - picBDOffset.y;
+
+                $cursor.css({ 'left': x - cursorSizeHalf.w + 'px', 'top': y - cursorSizeHalf.h + 'px' });
+                $zoomPic.css({ 'left': -(x * opts.scale - zoomWPSizeHalf.w) + 'px', 'top': -(y * opts.scale - zoomWPSizeHalf.h) + 'px' });
+
+            });
+            return $this;
+
+        };
+        $.fn.picZoomer.defaults = {
+            picHeight: 460,
+            scale: 2.5,
+            zoomerPosition: { top: '0', left: '380px' },
+
+            zoomWidth: 400,
+            zoomHeight: 460
+        };
+    })(jQuery);
+
+
+
+    $(document).ready(function () {
+        $('.picZoomer').picZoomer();
+        $('.piclist li').on('click', function (event) {
+            var $pic = $(this).find('img');
+            $('.picZoomer-pic').attr('src', $pic.attr('src'));
+        });
+
+        var owl = $('#recent_post');
+        owl.owlCarousel({
+            margin: 20,
+            dots: false,
+            nav: true,
+            navText: [
+                "<i class='fa fa-chevron-left'></i>",
+                "<i class='fa fa-chevron-right'></i>"
+            ],
+            autoplay: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+
+        $('.decrease_').click(function () {
+            decreaseValue(this);
+        });
+        $('.increase_').click(function () {
+            increaseValue(this);
+        });
+        function increaseValue(_this) {
+            var value = parseInt($(_this).siblings('input#number').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            $(_this).siblings('input#number').val(value);
+        }
+
+        function decreaseValue(_this) {
+            var value = parseInt($(_this).siblings('input#number').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            $(_this).siblings('input#number').val(value);
+        }
+    });
+
+</script> -->

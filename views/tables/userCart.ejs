@@ -1,0 +1,110 @@
+<!-- //toggle button js to -->
+<div class="row ">
+
+    <div class="col stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Cart Items</p>
+                <div class="table-responsive">
+                    <table id="recent-purchases-listing" class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Image</th>
+                                <th>bookTitle</th>
+                                <th>quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% let count=0; %>
+                                <% data.cartItems.forEach(element=> { %>
+                                    <% count++ %>
+                                        <tr>
+                                            <td>
+                                                <%= count %>
+                                            </td>
+                                            <td>
+                                                <%= element.title %>
+                                            </td>
+                                            <td>
+                                                <%= element.quantity %>
+                                            </td>
+
+
+
+                                            <td class="text-center ">
+                                                <a href="/user/removeFromCart/<%= element._id %> ">
+                                                    <button style="height:3rem;" class="btn col-2 btn-danger m-auto"><i
+                                                            class="mdi mdi-minus-box ">
+                                                        </i></button>
+                                                </a>
+                                                <button style="height:3rem;" class="btn col-6 btn-outline-secondary">
+                                                    <span class="">
+                                                        <%= element.quantity %>
+                                                    </span>
+                                                </button>
+                                                </a>
+                                                <a href="/user/addToCart/<%= element._id %> "><button
+                                                        style="height:3rem;" class="btn col-2 btn-primary "><i class="
+                                                        mdi mdi-plus-box ">
+                                                        </i></button>
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">summary</p>
+                <div class="table-responsive">
+                    <table id="recent-purchases-listing" class="table">
+                        <thead>
+                            <tr>
+                                <th>item</th>
+                                <th>price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% data.cartItems.forEach(element=> { %>
+
+                                <tr>
+                                    <td>
+                                        <%= element.title %>
+                                    </td>
+                                    <td>
+                                        <%= element.title %>
+                                    </td>
+
+                                </tr>
+                                <% }) %>
+                                    <tr>
+                                        <td>
+                                            <h3>Total</h3>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+
+                                    <td class="text-center m-auto">
+                                        <a href="/user/addToCheckout/"><button style="height:3rem;"
+                                                class="btn col-10 btn-warning "><i class="
+                                                mdi mdi-plus-box ">
+                                                </i>Add to ChecKout</button>
+                                        </a>
+                                    </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,7 +42,7 @@ addCategoryButton.onclick = () => {
     } else if (typeof newCategory != 'string' && containsNumber(newCategory)) {
         Swal.fire("Oops!", "Not allowed any number in Category!", "error");
     } else {
-        fetch("http://localhost:3000/admin/addCategory", {
+        fetch("http://www.takemybooks.live/admin/addCategory", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ deleteCategoryButton.onclick = () => {
             'error'
         )
     } else if (idMatch(categoryId)) {
-        fetch(`http://localhost:3000/admin/deleteCategory/${categoryId}`)
+        fetch(`http://www.takemybooks.live/admin/deleteCategory/${categoryId}`)
             .then((res) => res.json())
             .then((data) => {
                 Swal.fire(
@@ -101,7 +101,7 @@ addSubCategoryButton.onclick = () => {
     } else if (!(typeof newSubCategory === 'string') && containsNumber(newSubCategory)) {
         Swal.fire("Oops!", "Not allowed any number in sub-category!", "error");
     } else if (idMatch(categoryId)) {
-        fetch(`http://localhost:3000/admin/addSubCategory/${categoryId}`, {
+        fetch(`http://www.takemybooks.live/admin/addSubCategory/${categoryId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -148,7 +148,7 @@ displaySubCategory = () => {
             'error'
         )
     }
-    fetch(`http://localhost:3000/admin/displaySubCategory/${categoryId}`)
+    fetch(`http://www.takemybooks.live/admin/displaySubCategory/${categoryId}`)
         .then((res) => res.json())
         .then((data) => {
             select = document.getElementById('subCategorySelect4Delete');
@@ -189,7 +189,7 @@ deleteSubCategory = () => {
             'error'
         )
     } else {
-        fetch(`http://localhost:3000/admin/deleteSubCategory/${subCategoryId}`, {
+        fetch(`http://www.takemybooks.live/admin/deleteSubCategory/${subCategoryId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -220,7 +220,7 @@ addLanguageButton.onclick = () => {
     } else if (typeof newLanguage != 'string' && containsNumber(newLanguage)) {
         Swal.fire("Oops!", "Not allowed any number in Language!", "error");
     } else {
-        fetch("http://localhost:3000/admin/addLanguage", {
+        fetch("http://www.takemybooks.live/admin/addLanguage", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -257,7 +257,7 @@ addPricingTypeButton.onclick = () => {
     } else if (typeof newPricingType != 'string' && containsNumber(newPricingType)) {
         Swal.fire("Oops!", "Not allowed any number in Pricing type!", "error");
     } else {
-        fetch("http://localhost:3000/admin/addPricingType", {
+        fetch("http://www.takemybooks.live/admin/addPricingType", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -294,7 +294,7 @@ addVendorTypeButton.onclick = () => {
     } else if (typeof newVendorType != 'string' && containsNumber(newVendorType)) {
         Swal.fire("Oops!", "Not allowed any number in Category!", "error");
     } else {
-        fetch("http://localhost:3000/admin/addVendorType", {
+        fetch("http://www.takemybooks.live/admin/addVendorType", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -322,9 +322,5 @@ addVendorTypeButton.onclick = () => {
 
 
 
-// mouseleave
-    // subCategorySelect.value = "";
-    // window.location.reload();
-    // subCategoryOption.remove();
-// }
+
 
