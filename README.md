@@ -10,7 +10,7 @@
 
 ## Introduction
 
- Takemybooks.live is an e-commerce community website for sharing or donating a variety of used books between readers and for the community clubs. This website includes a list of modules. There is an admin Section, User Section and ventor section . Admin can login using predefined user id and password. Admin can control users and books details and the entire flow of books transfer. Users can browse and buy books, Majority of the books are free or donation and only the delivery charge will applied. There is a payment gateway for payment methods.
+ Takemybooks.live is an e-commerce community website for sharing or donating a variety of used books between readers and for the community clubs. This website includes a list of modules. There is an admin Section, User Section and vendor section (may be users are the vendor or the publishers, libries or schools, or any community clubs are become a vendor) . Admin can login using predefined user id and password. Admin can control users and books details and the entire flow of books transfer. Users can browse and buy books, Majority of the books are free or donation and only the delivery charge will applied. There is a payment gateway for payment methods.
 
 ## Run
 
